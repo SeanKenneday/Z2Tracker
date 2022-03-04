@@ -5,12 +5,19 @@ Let's do this!*/
 const { GarminConnect } = require('garmin-connect');                    //Links the library
 const GCClient = new GarminConnect();                                   //Create a new Garmin Connect Client
 
-console.log(GCClient);
-
+//have to use the async function to be able to us await.
+//must actually get logged in prior to asking for info.
+const main = async () => {
 
 await GCClient.login('sean.kenneday@gmail.com', 'Z24theWin');            //Uses credentials from the garmin.config.json or uses supplied params
-
 const userInfo = await GCClient.getUserInfo();
 
-
 console.log(userInfo);
+
+const myDevices = await GCClient.getDeviceInfo();
+
+console.log(myDevices[0]);
+};
+
+main();
+
