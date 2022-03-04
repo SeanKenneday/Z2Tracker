@@ -9,7 +9,7 @@ const GCClient = new GarminConnect();                                   //Create
 //must actually get logged in prior to asking for info.
 const main = async () => {
 
-await GCClient.login('sean.kenneday@gmail.com', 'Z24theWin');            //Uses credentials from the garmin.config.json or uses supplied params
+await GCClient.login('email@email.com', 'Password1');            //Uses credentials from the garmin.config.json or uses supplied params
 const userInfo = await GCClient.getUserInfo();
 
 console.log(userInfo);
